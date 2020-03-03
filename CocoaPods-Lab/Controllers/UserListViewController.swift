@@ -16,6 +16,7 @@ class UserListViewController: UIViewController {
         super.viewDidLoad()
         userListView.tableView.dataSource = self
         userListView.tableView.delegate = self
+        userListView.tableView.register(UINib(nibName: "UserCell", bundle: nil), forCellReuseIdentifier: "userCell")
     }
     
     override func loadView() {
@@ -37,5 +38,7 @@ extension UserListViewController: UITableViewDataSource {
 }
 
 extension UserListViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        102
+    }
 }
