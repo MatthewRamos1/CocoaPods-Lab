@@ -11,9 +11,17 @@ import UIKit
 class UserListViewController: UIViewController {
     
     let userListView = UserListView()
+    var users = [User]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.userListView.tableView.reloadData()
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        getUsers()
         userListView.tableView.dataSource = self
         userListView.tableView.delegate = self
         userListView.tableView.register(UINib(nibName: "UserCell", bundle: nil), forCellReuseIdentifier: "userCell")
@@ -22,11 +30,26 @@ class UserListViewController: UIViewController {
     override func loadView() {
         view = userListView
     }
+    
+    func getUsers() {
+        UserAPIClient.fetchUsers { [weak self] (result) in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "Couldn't fetch users", message: "Error: \(error)")
+                }
+            case .success(let users):
+                self?.users = users
+            }
+            
+        }
+    }
 }
+
 
 extension UserListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

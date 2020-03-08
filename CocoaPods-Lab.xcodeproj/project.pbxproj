@@ -10,7 +10,6 @@
 		0C4BC0C0240EF39C00F00300 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC0BF240EF39C00F00300 /* AppDelegate.swift */; };
 		0C4BC0C2240EF39C00F00300 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC0C1240EF39C00F00300 /* SceneDelegate.swift */; };
 		0C4BC0C4240EF39C00F00300 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC0C3240EF39C00F00300 /* UserListViewController.swift */; };
-		0C4BC0C7240EF39C00F00300 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C4BC0C5240EF39C00F00300 /* Main.storyboard */; };
 		0C4BC0C9240EF39D00F00300 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C4BC0C8240EF39D00F00300 /* Assets.xcassets */; };
 		0C4BC0CC240EF39D00F00300 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C4BC0CA240EF39D00F00300 /* LaunchScreen.storyboard */; };
 		0C4BC0D4240EFEA500F00300 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC0D3240EFEA500F00300 /* UserData.swift */; };
@@ -20,6 +19,7 @@
 		0C4BC0DE240F0F5800F00300 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC0DD240F0F5800F00300 /* UserDetailViewController.swift */; };
 		0C4BC0E1240F109E00F00300 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC0E0240F109E00F00300 /* UserDetailView.swift */; };
 		0C4BC1572415AD1A00F00300 /* UserAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC1562415AD1A00F00300 /* UserAPIClient.swift */; };
+		0C4BC1592415B06900F00300 /* UIViewController + Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC1582415B06900F00300 /* UIViewController + Alerts.swift */; };
 		CB272F231F2CCC495E40A358 /* Pods_CocoaPods_Lab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BBD7D2F66EA3AEF04DD9F2C /* Pods_CocoaPods_Lab.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +28,6 @@
 		0C4BC0BF240EF39C00F00300 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C4BC0C1240EF39C00F00300 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0C4BC0C3240EF39C00F00300 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
-		0C4BC0C6240EF39C00F00300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0C4BC0C8240EF39D00F00300 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C4BC0CB240EF39D00F00300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C4BC0CD240EF39D00F00300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -39,6 +38,7 @@
 		0C4BC0DD240F0F5800F00300 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		0C4BC0E0240F109E00F00300 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		0C4BC1562415AD1A00F00300 /* UserAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIClient.swift; sourceTree = "<group>"; };
+		0C4BC1582415B06900F00300 /* UIViewController + Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Alerts.swift"; sourceTree = "<group>"; };
 		7BBD7D2F66EA3AEF04DD9F2C /* Pods_CocoaPods_Lab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoaPods_Lab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B67B1EE70BD5F3E54C94AE87 /* Pods-CocoaPods-Lab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaPods-Lab.debug.xcconfig"; path = "Target Support Files/Pods-CocoaPods-Lab/Pods-CocoaPods-Lab.debug.xcconfig"; sourceTree = "<group>"; };
 		C240E20D00F45814BF0F3A5F /* Pods-CocoaPods-Lab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaPods-Lab.release.xcconfig"; path = "Target Support Files/Pods-CocoaPods-Lab/Pods-CocoaPods-Lab.release.xcconfig"; sourceTree = "<group>"; };
@@ -82,13 +82,13 @@
 				0C4BC0DC240F0B4600F00300 /* Models */,
 				0C4BC0BF240EF39C00F00300 /* AppDelegate.swift */,
 				0C4BC0C1240EF39C00F00300 /* SceneDelegate.swift */,
-				0C4BC0C5240EF39C00F00300 /* Main.storyboard */,
 				0C4BC0C8240EF39D00F00300 /* Assets.xcassets */,
 				0C4BC0CA240EF39D00F00300 /* LaunchScreen.storyboard */,
 				0C4BC0CD240EF39D00F00300 /* Info.plist */,
 				0C4BC0D8240F097600F00300 /* UserCell.xib */,
 				0C4BC0DA240F0AF000F00300 /* UserCell.swift */,
 				0C4BC1562415AD1A00F00300 /* UserAPIClient.swift */,
+				0C4BC1582415B06900F00300 /* UIViewController + Alerts.swift */,
 			);
 			path = "CocoaPods-Lab";
 			sourceTree = "<group>";
@@ -199,7 +199,6 @@
 				0C4BC0D9240F097600F00300 /* UserCell.xib in Resources */,
 				0C4BC0CC240EF39D00F00300 /* LaunchScreen.storyboard in Resources */,
 				0C4BC0C9240EF39D00F00300 /* Assets.xcassets in Resources */,
-				0C4BC0C7240EF39C00F00300 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,20 +260,13 @@
 				0C4BC0C0240EF39C00F00300 /* AppDelegate.swift in Sources */,
 				0C4BC0D4240EFEA500F00300 /* UserData.swift in Sources */,
 				0C4BC0C2240EF39C00F00300 /* SceneDelegate.swift in Sources */,
+				0C4BC1592415B06900F00300 /* UIViewController + Alerts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0C4BC0C5240EF39C00F00300 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0C4BC0C6240EF39C00F00300 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0C4BC0CA240EF39D00F00300 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

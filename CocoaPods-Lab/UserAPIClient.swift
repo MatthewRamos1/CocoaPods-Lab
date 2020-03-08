@@ -18,7 +18,6 @@ struct UserAPIClient {
         }
         
         AF.request(url).response { (response) in
-            
             if let error = response.error {
                 completion(.failure(error))
             } else if let data = response.data {
