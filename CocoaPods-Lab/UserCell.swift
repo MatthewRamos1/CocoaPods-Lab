@@ -14,4 +14,8 @@ class UserCell: UITableViewCell {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
+    func configureCell(user: User) {
+        userNameLabel.text = "\(user.name.title). \(user.name.first) \(user.name.last)"
+        emailLabel.text = user.email
+    }
 }

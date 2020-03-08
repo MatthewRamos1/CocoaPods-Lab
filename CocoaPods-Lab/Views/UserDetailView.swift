@@ -30,6 +30,7 @@ class UserDetailView: UIView {
         let label = UILabel()
         label.text = "Address"
         label.textAlignment = .center
+        label.numberOfLines = 2
         return label
     }()
     

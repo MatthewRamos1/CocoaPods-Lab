@@ -53,7 +53,11 @@ extension UserListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as? UserCell else {
+            fatalError("Couldn't downcast to UserCell, check cellForRowAt")
+        }
+        let user = users[indexPath.row]
+        cell.configureCell(user: user)
         return cell
     }
     
@@ -66,6 +70,7 @@ extension UserListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(UserDetailViewController(), animated: true)
+        let user = users[indexPath.row]
+        navigationController?.pushViewController(UserDetailViewController(user: user), animated: true)
     }
 }
