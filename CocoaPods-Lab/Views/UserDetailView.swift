@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class UserDetailView: UIView {
     
@@ -19,21 +20,30 @@ class UserDetailView: UIView {
     
     public lazy var userNameLabel: UILabel = {
         let label = UILabel()
+        label.text = "User Name"
+        label.textAlignment = .center
+        label.font = UIFont.preferredFont(forTextStyle: .headline)
         return label
     }()
     
     public lazy var addressLabel: UILabel = {
         let label = UILabel()
+        label.text = "Address"
+        label.textAlignment = .center
         return label
     }()
     
     public lazy var phoneNumLabel: UILabel = {
         let label = UILabel()
+        label.text = "Phone Number"
+        label.textAlignment = .center
         return label
     }()
     
     public lazy var DOBLabel: UILabel = {
         let label = UILabel()
+        label.text = "Birthdate"
+        label.textAlignment = .center
         return label
     }()
 
@@ -49,13 +59,56 @@ class UserDetailView: UIView {
     
     private func commonInit() {
         setupImageView()
+        setupUserNameLabel()
+        setupAddressLabel()
+        setupPhoneNumLabel()
+        setupDOBLabel()
+        
     }
     
     private func setupImageView() {
         addSubview(userImage)
         userImage.snp.makeConstraints { (make) in
             make.top.leading.trailing.equalTo(safeAreaLayoutGuide)
-            make.height.equalTo(safeAreaLayoutGuide)
+            make.height.equalTo(safeAreaLayoutGuide).multipliedBy(0.40)
+        }
+    }
+    
+    private func setupUserNameLabel() {
+        addSubview(userNameLabel)
+        userNameLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(userImage.snp.bottom).offset(20)
+            make.leading.equalTo(safeAreaLayoutGuide).offset(20)
+            make.trailing.equalTo(safeAreaLayoutGuide).offset(-20)
+            
+    }
+    }
+    
+    private func setupAddressLabel() {
+        addSubview(addressLabel)
+        addressLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(userNameLabel.snp.bottom).offset(20)
+            make.leading.equalTo(safeAreaLayoutGuide).offset(20)
+            make.trailing.equalTo(safeAreaLayoutGuide).offset(-20)
+        }
+    }
+    
+    private func setupPhoneNumLabel() {
+        addSubview(phoneNumLabel)
+        phoneNumLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(addressLabel.snp.bottom).offset(20)
+            make.leading.equalTo(safeAreaLayoutGuide).offset(20)
+            make.trailing.equalTo(safeAreaLayoutGuide).offset(-20)
+        }
+        
+    }
+    
+    private func setupDOBLabel() {
+        addSubview(DOBLabel)
+        DOBLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(phoneNumLabel.snp.bottom).offset(20)
+            make.leading.equalTo(safeAreaLayoutGuide).offset(20)
+            make.trailing.equalTo(safeAreaLayoutGuide).offset(-20)
         }
     }
 }

@@ -14,6 +14,7 @@ class UserDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        userDetailView.backgroundColor = .white
     }
     
     override func loadView() {
