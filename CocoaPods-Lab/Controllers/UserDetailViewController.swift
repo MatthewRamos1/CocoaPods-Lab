@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class UserDetailViewController: UIViewController {
     
@@ -24,15 +25,23 @@ class UserDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateUI()
+        navigationItem.title = "\(user.name.first) \(user.name.last)"
+    }
+    
+    override func loadView() {
+        view = userDetailView
+    }
+    
+    func updateUI() {
         userDetailView.backgroundColor = .white
         userDetailView.userNameLabel.text = "\(user.name.title). \(user.name.first) \(user.name.last)"
         userDetailView.addressLabel.text = "\(user.location.street), \(user.location.city), \(user.location.state)"
         userDetailView.phoneNumLabel.text = user.phone
         userDetailView.DOBLabel.text = user.dob.date + ", \(user.dob.age) years old"
-    }
-    
-    override func loadView() {
-        view = userDetailView
+        let url = URL(string: user.picture.large)
+        userDetailView.userImage.kf.setImage(with: url)
+
     }
     
 }

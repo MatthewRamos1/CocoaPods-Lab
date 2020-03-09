@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class UserCell: UITableViewCell {
 
@@ -17,5 +18,7 @@ class UserCell: UITableViewCell {
     func configureCell(user: User) {
         userNameLabel.text = "\(user.name.title). \(user.name.first) \(user.name.last)"
         emailLabel.text = user.email
+        let url = URL(fileURLWithPath: user.picture.large)
+        userImage.kf.setImage(with: url)
     }
 }

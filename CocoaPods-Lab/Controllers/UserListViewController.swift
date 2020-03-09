@@ -25,6 +25,7 @@ class UserListViewController: UIViewController {
         userListView.tableView.dataSource = self
         userListView.tableView.delegate = self
         userListView.tableView.register(UINib(nibName: "UserCell", bundle: nil), forCellReuseIdentifier: "userCell")
+        navigationItem.title = "User List"
     }
     
     override func loadView() {

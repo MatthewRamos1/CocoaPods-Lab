@@ -8,6 +8,7 @@ target 'CocoaPods-Lab' do
   # Pods for CocoaPods-Lab
   pod 'Alamofire'
   pod 'SnapKit'
+  pod 'Kingfisher'
 
 
 end
